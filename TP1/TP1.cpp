@@ -66,29 +66,7 @@ std::vector<glm::vec3> generatePlan(float length, int resolution) {
 
     float positioni = 0, positionj;
 
-    float randZPt1;
-    float randZPt2;
-    float randZPt3;
-    float randZPt4;
-
-    /*for (int i = 0; i < resolution+1; i++) {
-        positionj = 0;
-
-        for (int j = 0; j < resolution+1; j++) {
-
-            randZ = 0.5;//(float)(rand()) / (float)(RAND_MAX);
-
-            std::cout << positioni << " " << positionj << " " << randZ << std::endl;
-            
-            indexed_vertices.push_back(glm::vec3(positioni, positionj, randZ));
-            positionj += pas;
-        }
-        positioni += pas;
-    }*/
-
     float nbSquare = pow(resolution, 2);
-
-    std::cout << nbSquare << " " << pas << std::endl;
 
     float pasBasX = 0;
     float pasBasY = 0;
@@ -100,11 +78,6 @@ std::vector<glm::vec3> generatePlan(float length, int resolution) {
     glm::vec3 basGauche, basDroit, hautGauche, hautDroit;
 
     for (int elt = 0; elt < nbSquare; elt++) {
-
-        randZPt1 = (float)(rand()) / (float)(RAND_MAX);
-        randZPt2 = (float)(rand()) / (float)(RAND_MAX);
-        randZPt3 = (float)(rand()) / (float)(RAND_MAX);
-        randZPt4 = (float)(rand()) / (float)(RAND_MAX);
 
         basGauche = glm::vec3(pasBasX, pasBasY, 0);
         basDroit = glm::vec3(pasHautX, pasBasY, 0);
