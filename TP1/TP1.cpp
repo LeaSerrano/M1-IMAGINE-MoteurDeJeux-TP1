@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 // Include GLEW
 #include <GL/glew.h>
@@ -21,6 +22,9 @@ using namespace glm;
 #include <common/shader.hpp>
 #include <common/objloader.hpp>
 #include <common/vboindexer.hpp>
+
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
 void processInput(GLFWwindow *window);
 
@@ -42,46 +46,149 @@ float angle = 0.;
 float zoom = 1.;
 /*******************************************************************************/
 
-std::vector<glm::vec3> generatePlan(float length, int resolution) {
-    std::vector<glm::vec3> indexed_vertices;
-    std::vector<unsigned short> indices;
+std::vector<int> getIndex(std::vector<glm::vec3> indexed_vertices, glm::vec3 point) {
+    std::vector<int> indexList;
 
-    float pas = length/resolution;
-    float positioni, positionj = -0.5;
-
-    for (int i = -0.5; i < resolution+1; i++) {
-        positioni = -0.5;
-
-        for (int j = -0.5; j < resolution+1; j++) {
-            
-            indexed_vertices.push_back(glm::vec3(positioni, positionj, 0.5));
-            positioni += pas;
+    for (int i = 0; i < indexed_vertices.size(); i++) {     
+        if (indexed_vertices[i] == point) {
+            indexList.push_back(i);
         }
-        positionj += pas;
     }
 
-    std::cout << indexed_vertices[0][0] << " " << indexed_vertices[0][1] << " " << indexed_vertices[0][2] << std::endl;
-    std::cout << indexed_vertices[1][0] << " " << indexed_vertices[1][1] << " " << indexed_vertices[1][2] << std::endl;
-    std::cout << indexed_vertices[2][0] << " " << indexed_vertices[2][1] << " " << indexed_vertices[2][2] << std::endl;
-    std::cout << indexed_vertices[3][0] << " " << indexed_vertices[3][1] << " " << indexed_vertices[3][2] << std::endl;
+    return indexList;
+}
 
-    std::cout << indexed_vertices[4][0] << " " << indexed_vertices[4][1] << " " << indexed_vertices[4][2] << std::endl;
-    std::cout << indexed_vertices[5][0] << " " << indexed_vertices[5][1] << " " << indexed_vertices[5][2] << std::endl;
-    std::cout << indexed_vertices[6][0] << " " << indexed_vertices[6][1] << " " << indexed_vertices[6][2] << std::endl;
-    std::cout << indexed_vertices[7][0] << " " << indexed_vertices[7][1] << " " << indexed_vertices[7][2] << std::endl;
 
-    std::cout << indexed_vertices[8][0] << " " << indexed_vertices[8][1] << " " << indexed_vertices[8][2] << std::endl;
+std::vector<glm::vec3> generatePlan(float length, int resolution) {
+    std::vector<glm::vec3> indexed_vertices;
 
-    std::cout << indexed_vertices.size() << std::endl;
+    float pas = length/(float)resolution;
 
-    indices = {0, 1, 3, 0, 3, 2};
+    float positioni = 0, positionj;
 
-    std::cout << indices[0] << " " << indices[1] << " " << indices[2] << std::endl;
-    std::cout << indices[3] << " " << indices[4] << " " << indices[5] << std::endl;
+    float randZPt1;
+    float randZPt2;
+    float randZPt3;
+    float randZPt4;
+
+    /*for (int i = 0; i < resolution+1; i++) {
+        positionj = 0;
+
+        for (int j = 0; j < resolution+1; j++) {
+
+            randZ = 0.5;//(float)(rand()) / (float)(RAND_MAX);
+
+            std::cout << positioni << " " << positionj << " " << randZ << std::endl;
+            
+            indexed_vertices.push_back(glm::vec3(positioni, positionj, randZ));
+            positionj += pas;
+        }
+        positioni += pas;
+    }*/
+
+    float nbSquare = pow(resolution, 2);
+
+    std::cout << nbSquare << " " << pas << std::endl;
+
+    float pasBasX = 0;
+    float pasBasY = 0;
+    float pasHautX = pas;
+    float pasHautY = pas;
+
+    int cpt = floor(nbSquare/resolution)-1;
+
+    glm::vec3 basGauche, basDroit, hautGauche, hautDroit;
+
+    for (int elt = 0; elt < nbSquare; elt++) {
+
+        randZPt1 = (float)(rand()) / (float)(RAND_MAX);
+        randZPt2 = (float)(rand()) / (float)(RAND_MAX);
+        randZPt3 = (float)(rand()) / (float)(RAND_MAX);
+        randZPt4 = (float)(rand()) / (float)(RAND_MAX);
+
+        basGauche = glm::vec3(pasBasX, pasBasY, 0);
+        basDroit = glm::vec3(pasHautX, pasBasY, 0);
+
+        hautDroit = glm::vec3(pasHautX, pasHautY, 0);
+        hautGauche = glm::vec3(pasBasX, pasHautY, 0);
+
+        indexed_vertices.push_back(basGauche);
+        indexed_vertices.push_back(basDroit);
+        indexed_vertices.push_back(hautDroit);
+        indexed_vertices.push_back(hautGauche);
+
+        if (elt == cpt) {
+            pasBasX -= pas*(resolution-1);
+            pasHautX -= pas*(resolution-1);
+
+            pasBasY += pas;
+            pasHautY += pas;
+
+            cpt += resolution;
+        }
+        else {
+            pasBasX += pas;
+            pasHautX += pas;
+        }
+    }
+
+    for (int i = 0; i < indexed_vertices.size(); i++) {
+
+        float randZ = (float)(rand()) / (float)(RAND_MAX);
+        
+        if(std::find(indexed_vertices.begin(), indexed_vertices.end(), indexed_vertices[i]) != indexed_vertices.end()) {
+            std::vector<int> indexList = getIndex(indexed_vertices, indexed_vertices[i]);
+
+            for (int j = 0; j < indexList.size(); j++) {
+                indexed_vertices[indexList[j]][2] = randZ;
+            }
+        }
+        else {
+            indexed_vertices[i][2] = randZ;
+        }
+
+    }
 
     return indexed_vertices;
 
 }
+
+std::vector<unsigned short> generateTriangle(int resolution) {
+    std::vector<unsigned short> indices;
+
+    int j = 0, cptResolution = 0;
+
+    for (int i = 0; i < pow(resolution, 2)*4; i+=4) {
+
+        indices.push_back(i);
+        indices.push_back(i+1);
+        indices.push_back(i+2);
+
+        indices.push_back(i);
+        indices.push_back(i+2);
+        indices.push_back(i+3);
+
+
+    }
+
+    return indices;
+}
+
+void generateTextureCoords(float *q, int resolution) {
+    int taille = pow(resolution, 2)*4*2;
+
+    for (int i = 0; i < taille; i+=8) {
+        q[i] = 0.0f;
+        q[i+1] = 0.0f;
+        q[i+2] = 0.0f;
+        q[i+3] = 1.0f;
+        q[i+4] = 1.0f;
+        q[i+5] = 1.0f;
+        q[i+6] = 1.0f; 
+        q[i+7] = 0.0f;
+    }
+}
+
 
 int main( void )
 {
@@ -156,45 +263,10 @@ int main( void )
     //Chargement du fichier de maillage
     /*std::string filename("cube.off");
     loadOFF(filename, indexed_vertices, indices, triangles );*/
-    int resolution = 2;
+    int resolution = 16;
 
     indexed_vertices = generatePlan(1, resolution);
-
-    //indexed_vertices = {glm::vec3(-0.500000, -0.500000, 0.500000), glm::vec3(0.500000, -0.500000, 0.500000), glm::vec3(-0.500000, 0.500000, 0.500000), glm::vec3(0.500000, 0.500000, 0.500000)};
-
-    //indices = {0, 1, 3, 0, 3, 2};
-    //indices = {0, 1, 4, 0, 4, 3, 1, 2, 5, 1, 5, 4, 3, 4, 7, 3, 7, 6, 4, 5, 8, 4, 8, 7};
-
-    for (int i = 0; i < 4; i++) {
-        if (i > 1) {
-           indices.push_back(i+1);
-        indices.push_back(i+2);
-        indices.push_back(i+5);
-
-        indices.push_back(i+1);
-        indices.push_back(i+5);
-        indices.push_back(i+4);
-        }
-        else {
-        indices.push_back(i);
-        indices.push_back(i+1);
-        indices.push_back(i+4);
-
-        indices.push_back(i);
-        indices.push_back(i+4);
-        indices.push_back(i+3);
-        }
-    } 
-
-    /*glBegin( GL_POINTS);
-    glVertex3f(indexed_vertices[0][0], indexed_vertices[0][1], indexed_vertices[0][2]);
-    glVertex3f(indexed_vertices[1][0], indexed_vertices[1][1], indexed_vertices[1][2]);
-    glVertex3f(indexed_vertices[2][0], indexed_vertices[2][1], indexed_vertices[2][2]);
-    glVertex3f(indexed_vertices[3][0], indexed_vertices[3][1], indexed_vertices[3][2]);
-    glEnd();*/
-
-    //triangles = {{0, 1, 3}, {0, 3, 2}/*, {2, 3, 5, 4}*/};
-
+    indices = generateTriangle(resolution);
 
     // Load it into a VBO
 
@@ -208,6 +280,37 @@ int main( void )
     glGenBuffers(1, &elementbuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned short), &indices[0] , GL_STATIC_DRAW);
+
+
+    float squareTextureData[(int)pow(resolution, 2)*4*2]; 
+    generateTextureCoords(&squareTextureData[0], resolution);
+
+    GLuint textureBuffer;
+    glGenBuffers(1, &textureBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, textureBuffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(squareTextureData), &squareTextureData, GL_STATIC_DRAW);
+
+    unsigned int texture;
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+
+    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+
+    int width, height, nbChannels;
+    unsigned char *data = stbi_load("cliff.jpg", &width, &height, &nbChannels, 0);
+
+    if (data) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else {
+        std::cout << "Failed to load texture" << std::endl;
+    }
+
+    stbi_image_free(data);
+
+    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
 
     // Get a handle for our "LightPosition" uniform
     glUseProgram(programID);
@@ -251,7 +354,17 @@ int main( void )
         // in the "Model View Projection" to the shader uniforms
 
         /****************************************/
+        glm::mat4 modelMatrix, viewMatrix, projectionMatrix;
 
+        modelMatrix = glm::mat4(1.0f);
+
+
+        viewMatrix = glm::lookAt(camera_position, camera_target, camera_up);
+        projectionMatrix = glm::perspective(glm::radians(45.0f), 4.0f/3.0f, 0.1f, 100.0f);
+
+        glUniformMatrix4fv(glGetUniformLocation(programID, "view"), 1 , GL_FALSE, &viewMatrix[0][0]);
+        glUniformMatrix4fv(glGetUniformLocation(programID, "projection"), 1 , GL_FALSE, &projectionMatrix[0][0]);
+        glUniformMatrix4fv(glGetUniformLocation(programID, "model"), 1, false, &modelMatrix[0][0]);
 
 
 
@@ -269,6 +382,15 @@ int main( void )
 
         // Index buffer
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer);
+
+        glBindBuffer(GL_ARRAY_BUFFER, textureBuffer);
+        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2*sizeof(float), (void*)0);
+        glEnableVertexAttribArray(1);
+
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, texture);
+        glActiveTexture(GL_TEXTURE0);
+        glUniform1i(glGetUniformLocation(programID, "colorTexture"), GL_TEXTURE0);
 
         // Draw the triangles !
         glDrawElements(
@@ -305,17 +427,40 @@ int main( void )
 // ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow *window)
 {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, true);
+    }
 
     //Camera zoom in and out
     float cameraSpeed = 2.5 * deltaTime;
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        camera_position += cameraSpeed * camera_target;
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        camera_position -= cameraSpeed * camera_target;
 
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) { //touche Z en azerty
+        camera_position += cameraSpeed * camera_target;
+    }
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) { 
+        camera_position -= cameraSpeed * camera_target;
+    }
     //TODO add translations
+
+    if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) { //touche A
+        camera_position += cameraSpeed * glm::vec3(0.0f, 0.0f, -0.2f);
+    }
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) { //touche Q
+        camera_position += cameraSpeed * glm::vec3(0.0f, 0.0f, 0.2f);
+    }
+    if (glfwGetKey(window, GLFW_KEY_Z) == GLFW_PRESS) { //W
+        camera_position += cameraSpeed * glm::vec3(0.0f, -0.2f, 0.0f);
+    }
+    if (glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS) {
+        camera_position += cameraSpeed * glm::vec3(0.0f, 0.2f, 0.0f);
+    }
+    if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS) {
+        camera_position += cameraSpeed * glm::vec3(-0.2f, 0.0f, 0.0f);
+    }
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+        camera_position += cameraSpeed * glm::vec3(0.2f, 0.0f, 0.0f);
+    }
+
 
 }
 

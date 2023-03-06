@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1
+CMAKE_SOURCE_DIR = /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build
+CMAKE_BINARY_DIR = /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TP1.dir/depend.make
@@ -72,86 +72,86 @@ include CMakeFiles/TP1.dir/flags.make
 CMakeFiles/TP1.dir/TP1/TP1.cpp.o: CMakeFiles/TP1.dir/flags.make
 CMakeFiles/TP1.dir/TP1/TP1.cpp.o: ../TP1/TP1.cpp
 CMakeFiles/TP1.dir/TP1/TP1.cpp.o: CMakeFiles/TP1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TP1.dir/TP1/TP1.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/TP1/TP1.cpp.o -MF CMakeFiles/TP1.dir/TP1/TP1.cpp.o.d -o CMakeFiles/TP1.dir/TP1/TP1.cpp.o -c /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/TP1/TP1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TP1.dir/TP1/TP1.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/TP1/TP1.cpp.o -MF CMakeFiles/TP1.dir/TP1/TP1.cpp.o.d -o CMakeFiles/TP1.dir/TP1/TP1.cpp.o -c /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/TP1/TP1.cpp
 
 CMakeFiles/TP1.dir/TP1/TP1.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP1.dir/TP1/TP1.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/TP1/TP1.cpp > CMakeFiles/TP1.dir/TP1/TP1.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/TP1/TP1.cpp > CMakeFiles/TP1.dir/TP1/TP1.cpp.i
 
 CMakeFiles/TP1.dir/TP1/TP1.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP1.dir/TP1/TP1.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/TP1/TP1.cpp -o CMakeFiles/TP1.dir/TP1/TP1.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/TP1/TP1.cpp -o CMakeFiles/TP1.dir/TP1/TP1.cpp.s
 
 CMakeFiles/TP1.dir/common/shader.cpp.o: CMakeFiles/TP1.dir/flags.make
 CMakeFiles/TP1.dir/common/shader.cpp.o: ../common/shader.cpp
 CMakeFiles/TP1.dir/common/shader.cpp.o: CMakeFiles/TP1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TP1.dir/common/shader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/common/shader.cpp.o -MF CMakeFiles/TP1.dir/common/shader.cpp.o.d -o CMakeFiles/TP1.dir/common/shader.cpp.o -c /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TP1.dir/common/shader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/common/shader.cpp.o -MF CMakeFiles/TP1.dir/common/shader.cpp.o.d -o CMakeFiles/TP1.dir/common/shader.cpp.o -c /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/shader.cpp
 
 CMakeFiles/TP1.dir/common/shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP1.dir/common/shader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/shader.cpp > CMakeFiles/TP1.dir/common/shader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/shader.cpp > CMakeFiles/TP1.dir/common/shader.cpp.i
 
 CMakeFiles/TP1.dir/common/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP1.dir/common/shader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/shader.cpp -o CMakeFiles/TP1.dir/common/shader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/shader.cpp -o CMakeFiles/TP1.dir/common/shader.cpp.s
 
 CMakeFiles/TP1.dir/common/controls.cpp.o: CMakeFiles/TP1.dir/flags.make
 CMakeFiles/TP1.dir/common/controls.cpp.o: ../common/controls.cpp
 CMakeFiles/TP1.dir/common/controls.cpp.o: CMakeFiles/TP1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TP1.dir/common/controls.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/common/controls.cpp.o -MF CMakeFiles/TP1.dir/common/controls.cpp.o.d -o CMakeFiles/TP1.dir/common/controls.cpp.o -c /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/controls.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TP1.dir/common/controls.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/common/controls.cpp.o -MF CMakeFiles/TP1.dir/common/controls.cpp.o.d -o CMakeFiles/TP1.dir/common/controls.cpp.o -c /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/controls.cpp
 
 CMakeFiles/TP1.dir/common/controls.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP1.dir/common/controls.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/controls.cpp > CMakeFiles/TP1.dir/common/controls.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/controls.cpp > CMakeFiles/TP1.dir/common/controls.cpp.i
 
 CMakeFiles/TP1.dir/common/controls.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP1.dir/common/controls.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/controls.cpp -o CMakeFiles/TP1.dir/common/controls.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/controls.cpp -o CMakeFiles/TP1.dir/common/controls.cpp.s
 
 CMakeFiles/TP1.dir/common/texture.cpp.o: CMakeFiles/TP1.dir/flags.make
 CMakeFiles/TP1.dir/common/texture.cpp.o: ../common/texture.cpp
 CMakeFiles/TP1.dir/common/texture.cpp.o: CMakeFiles/TP1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TP1.dir/common/texture.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/common/texture.cpp.o -MF CMakeFiles/TP1.dir/common/texture.cpp.o.d -o CMakeFiles/TP1.dir/common/texture.cpp.o -c /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/texture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TP1.dir/common/texture.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/common/texture.cpp.o -MF CMakeFiles/TP1.dir/common/texture.cpp.o.d -o CMakeFiles/TP1.dir/common/texture.cpp.o -c /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/texture.cpp
 
 CMakeFiles/TP1.dir/common/texture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP1.dir/common/texture.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/texture.cpp > CMakeFiles/TP1.dir/common/texture.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/texture.cpp > CMakeFiles/TP1.dir/common/texture.cpp.i
 
 CMakeFiles/TP1.dir/common/texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP1.dir/common/texture.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/texture.cpp -o CMakeFiles/TP1.dir/common/texture.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/texture.cpp -o CMakeFiles/TP1.dir/common/texture.cpp.s
 
 CMakeFiles/TP1.dir/common/objloader.cpp.o: CMakeFiles/TP1.dir/flags.make
 CMakeFiles/TP1.dir/common/objloader.cpp.o: ../common/objloader.cpp
 CMakeFiles/TP1.dir/common/objloader.cpp.o: CMakeFiles/TP1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TP1.dir/common/objloader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/common/objloader.cpp.o -MF CMakeFiles/TP1.dir/common/objloader.cpp.o.d -o CMakeFiles/TP1.dir/common/objloader.cpp.o -c /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/objloader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TP1.dir/common/objloader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/common/objloader.cpp.o -MF CMakeFiles/TP1.dir/common/objloader.cpp.o.d -o CMakeFiles/TP1.dir/common/objloader.cpp.o -c /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/objloader.cpp
 
 CMakeFiles/TP1.dir/common/objloader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP1.dir/common/objloader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/objloader.cpp > CMakeFiles/TP1.dir/common/objloader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/objloader.cpp > CMakeFiles/TP1.dir/common/objloader.cpp.i
 
 CMakeFiles/TP1.dir/common/objloader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP1.dir/common/objloader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/objloader.cpp -o CMakeFiles/TP1.dir/common/objloader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/objloader.cpp -o CMakeFiles/TP1.dir/common/objloader.cpp.s
 
 CMakeFiles/TP1.dir/common/vboindexer.cpp.o: CMakeFiles/TP1.dir/flags.make
 CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp
 CMakeFiles/TP1.dir/common/vboindexer.cpp.o: CMakeFiles/TP1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TP1.dir/common/vboindexer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/common/vboindexer.cpp.o -MF CMakeFiles/TP1.dir/common/vboindexer.cpp.o.d -o CMakeFiles/TP1.dir/common/vboindexer.cpp.o -c /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/vboindexer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TP1.dir/common/vboindexer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TP1.dir/common/vboindexer.cpp.o -MF CMakeFiles/TP1.dir/common/vboindexer.cpp.o.d -o CMakeFiles/TP1.dir/common/vboindexer.cpp.o -c /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/vboindexer.cpp
 
 CMakeFiles/TP1.dir/common/vboindexer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP1.dir/common/vboindexer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/vboindexer.cpp > CMakeFiles/TP1.dir/common/vboindexer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/vboindexer.cpp > CMakeFiles/TP1.dir/common/vboindexer.cpp.i
 
 CMakeFiles/TP1.dir/common/vboindexer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP1.dir/common/vboindexer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/vboindexer.cpp -o CMakeFiles/TP1.dir/common/vboindexer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/vboindexer.cpp -o CMakeFiles/TP1.dir/common/vboindexer.cpp.s
 
 # Object files for target TP1
 TP1_OBJECTS = \
@@ -195,9 +195,9 @@ TP1: /usr/lib/x86_64-linux-gnu/libXcursor.so
 TP1: /usr/lib/x86_64-linux-gnu/libGL.so
 TP1: /usr/lib/x86_64-linux-gnu/libGLU.so
 TP1: CMakeFiles/TP1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable TP1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable TP1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TP1.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/cmake -E copy /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/./TP1 /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/TP1/
+	/usr/bin/cmake -E copy /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/./TP1 /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/TP1/
 
 # Rule to build all files generated by this target.
 CMakeFiles/TP1.dir/build: TP1
@@ -208,6 +208,6 @@ CMakeFiles/TP1.dir/clean:
 .PHONY : CMakeFiles/TP1.dir/clean
 
 CMakeFiles/TP1.dir/depend:
-	cd /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1 /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1 /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles/TP1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1 /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1 /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/build/CMakeFiles/TP1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/TP1.dir/depend
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/external/glfw-3.1.2/examples
+# Install script for directory: /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/external/glfw-3.1.2/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

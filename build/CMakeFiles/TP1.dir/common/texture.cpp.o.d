@@ -1,5 +1,5 @@
 CMakeFiles/TP1.dir/common/texture.cpp.o: \
- /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/texture.cpp \
+ /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/common/texture.cpp \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -58,9 +58,9 @@ CMakeFiles/TP1.dir/common/texture.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/11/bits/std_abs.h /usr/include/string.h \
  /usr/include/strings.h \
- /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/external/glew-1.13.0/include/GL/glew.h \
+ /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/external/glew-1.13.0/include/GL/glew.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/GL/glu.h \
  /usr/include/GL/gl.h \
- /home/e20190003227/M1-IMAGINE-S2/MoteurDeJeux/M1-IMAGINE-MoteurDeJeux-TP1/external/glfw-3.1.2/include/GLFW/glfw3.h
+ /home/lea/M1-IMAGINE/S2/MoteurJeux/M1-IMAGINE-MoteurDeJeux-TP1/external/glfw-3.1.2/include/GLFW/glfw3.h

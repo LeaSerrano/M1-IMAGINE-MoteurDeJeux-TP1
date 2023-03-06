@@ -187,6 +187,31 @@ CMakeFiles/TP1.dir/TP1/TP1.cpp.o: ../TP1/TP1.cpp \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/bits/stl_algo.h \
+  /usr/include/c++/11/bits/algorithmfwd.h \
+  /usr/include/c++/11/bits/stl_heap.h \
+  /usr/include/c++/11/bits/stl_tempbuf.h \
+  /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/11/functional \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/erase_if.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
   ../external/glew-1.13.0/include/GL/glew.h \
   /usr/include/GL/glu.h \
   /usr/include/GL/gl.h \
@@ -316,7 +341,11 @@ CMakeFiles/TP1.dir/TP1/TP1.cpp.o: ../TP1/TP1.cpp \
   ../external/glm-0.9.7.1/glm/gtc/matrix_transform.inl \
   ../common/shader.hpp \
   ../common/objloader.hpp \
-  ../common/vboindexer.hpp
+  ../common/vboindexer.hpp \
+  ../TP1/stb_image.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/c++/11/math.h
 
 CMakeFiles/TP1.dir/common/controls.cpp.o: ../common/controls.cpp \
   /usr/include/stdc-predef.h \
@@ -1381,28 +1410,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/sstream:
 
-/usr/include/c++/11/bits/unordered_map.h:
-
-/usr/include/c++/11/bits/hashtable_policy.h:
-
-/usr/include/c++/11/bits/hashtable.h:
-
-/usr/include/c++/11/unordered_map:
-
-/usr/include/c++/11/bits/refwrap.h:
-
-/usr/include/c++/11/bits/invoke.h:
-
-/usr/include/c++/11/bits/uses_allocator.h:
-
-/usr/include/c++/11/tuple:
-
-/usr/include/c++/11/pstl/execution_defs.h:
-
-/usr/include/c++/11/bits/algorithmfwd.h:
-
-/usr/include/c++/11/algorithm:
-
 /usr/include/c++/11/bits/fstream.tcc:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
@@ -1411,8 +1418,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/fstream:
 
-/usr/include/strings.h:
-
 ../common/objloader.cpp:
 
 ../common/controls.hpp:
@@ -1420,6 +1425,12 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 /usr/include/KHR/khrplatform.h:
 
 /usr/include/GL/glext.h:
+
+/usr/include/c++/11/math.h:
+
+/usr/include/strings.h:
+
+../TP1/stb_image.h:
 
 ../common/vboindexer.hpp:
 
@@ -1469,10 +1480,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 ../external/glm-0.9.7.1/glm/detail/type_mat4x4.hpp:
 
-/usr/include/c++/11/bits/stl_algo.h:
-
-../external/glm-0.9.7.1/glm/mat4x4.hpp:
-
 ../external/glm-0.9.7.1/glm/detail/type_mat4x2.inl:
 
 ../external/glm-0.9.7.1/glm/detail/type_mat4x2.hpp:
@@ -1482,12 +1489,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 ../external/glm-0.9.7.1/glm/detail/type_mat3x4.inl:
 
 ../external/glm-0.9.7.1/glm/detail/type_mat3x4.hpp:
-
-/usr/include/c++/11/bits/std_function.h:
-
-/usr/include/c++/11/bits/stl_tempbuf.h:
-
-../external/glm-0.9.7.1/glm/mat3x4.hpp:
 
 ../external/glm-0.9.7.1/glm/detail/type_mat3x3.inl:
 
@@ -1502,6 +1503,34 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 ../external/glm-0.9.7.1/glm/detail/type_mat2x4.inl:
 
 ../external/glm-0.9.7.1/glm/detail/type_mat2x3.inl:
+
+../external/glm-0.9.7.1/glm/detail/type_mat2x2.inl:
+
+../external/glm-0.9.7.1/glm/detail/type_mat2x2.hpp:
+
+../external/glm-0.9.7.1/glm/mat2x2.hpp:
+
+../common/texture.cpp:
+
+../external/glm-0.9.7.1/glm/vec3.hpp:
+
+../external/glm-0.9.7.1/glm/detail/precision.hpp:
+
+../external/glm-0.9.7.1/glm/detail/type_vec.hpp:
+
+../external/glm-0.9.7.1/glm/detail/type_float.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h:
+
+../external/glm-0.9.7.1/glm/detail/type_mat2x4.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h:
+
+../external/glm-0.9.7.1/glm/detail/setup.hpp:
+
+../external/glm-0.9.7.1/glm/detail/type_int.hpp:
 
 /usr/include/locale.h:
 
@@ -1525,8 +1554,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-../external/glm-0.9.7.1/glm/detail/type_mat2x2.hpp:
-
 /usr/include/c++/11/bits/nested_exception.h:
 
 /usr/include/c++/11/cwchar:
@@ -1544,6 +1571,12 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 /usr/include/c++/11/bits/stringfwd.h:
 
 /usr/include/c++/11/backward/binders.h:
+
+/usr/include/c++/11/algorithm:
+
+../external/glm-0.9.7.1/glm/vec2.hpp:
+
+/usr/include/c++/11/bits/string_view.tcc:
 
 /usr/include/c++/11/bits/functional_hash.h:
 
@@ -1573,11 +1606,25 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/ext/string_conversions.h:
 
+/usr/include/c++/11/tuple:
+
 /usr/include/c++/11/bits/hash_bytes.h:
 
 /usr/include/c++/11/bits/move.h:
 
+../external/glm-0.9.7.1/glm/detail/type_vec3.hpp:
+
+../external/glm-0.9.7.1/glm/detail/type_mat.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+
 /usr/include/c++/11/bits/stl_pair.h:
+
+../external/glm-0.9.7.1/glm/detail/type_mat2x3.hpp:
+
+../external/glm-0.9.7.1/glm/vec4.hpp:
+
+/usr/include/c++/11/ext/atomicity.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
@@ -1588,8 +1635,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
-
-../external/glm-0.9.7.1/glm/detail/type_float.hpp:
 
 /usr/include/alloca.h:
 
@@ -1651,10 +1696,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/bits/stl_uninitialized.h:
 
-../common/texture.cpp:
-
-../external/glm-0.9.7.1/glm/vec3.hpp:
-
 /usr/include/c++/11/ext/new_allocator.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
@@ -1680,6 +1721,10 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 /usr/include/c++/11/cstddef:
 
 /usr/include/c++/11/bits/stl_vector.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
+
+/usr/include/c++/11/system_error:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
@@ -1707,6 +1752,12 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
+../external/glm-0.9.7.1/glm/detail/type_vec4.inl:
+
+/usr/include/c++/11/initializer_list:
+
+/usr/include/c++/11/iosfwd:
+
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/c++/11/bits/concept_check.h:
@@ -1717,9 +1768,9 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/streambuf:
 
-/usr/include/c++/11/bits/stl_iterator_base_funcs.h:
-
 ../external/glm-0.9.7.1/glm/detail/type_vec4.hpp:
+
+/usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
 /usr/include/c++/11/bits/cpp_type_traits.h:
 
@@ -1765,9 +1816,13 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
+../external/glm-0.9.7.1/glm/mat3x4.hpp:
 
-../external/glm-0.9.7.1/glm/mat2x2.hpp:
+/usr/include/c++/11/bits/stl_tempbuf.h:
+
+/usr/include/c++/11/bits/std_function.h:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
@@ -1777,29 +1832,17 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/tr1/hypergeometric.tcc:
 
-/usr/include/c++/11/ext/aligned_buffer.h:
-
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
-/usr/include/c++/11/bits/erase_if.h:
-
-/usr/include/c++/11/bits/ptr_traits.h:
-
-/usr/include/stdint.h:
-
-/usr/include/endian.h:
+/usr/include/c++/11/ext/aligned_buffer.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
 /usr/include/c++/11/cctype:
 
+/usr/include/c++/11/unordered_map:
+
 /usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/c++/11/bits/stl_heap.h:
-
-../common/shader.hpp:
-
-/usr/include/c++/11/bits/std_abs.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
@@ -1819,15 +1862,13 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
 
-/usr/include/c++/11/system_error:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
-
 ../external/glm-0.9.7.1/glm/detail/func_vector_relational.inl:
 
 /usr/include/c++/11/ext/alloc_traits.h:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
+
+/usr/include/c++/11/bits/unordered_map.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
@@ -1838,6 +1879,8 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/usr/include/c++/11/bits/invoke.h:
 
 /usr/include/c++/11/bits/stl_bvector.h:
 
@@ -1858,6 +1901,18 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 /usr/include/c++/11/tr1/gamma.tcc:
 
 ../external/glm-0.9.7.1/glm/fwd.hpp:
+
+../external/glm-0.9.7.1/glm/detail/type_vec2.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/c++/11/bits/ostream_insert.h:
+
+../external/glm-0.9.7.1/glm/detail/type_vec3.inl:
+
+/usr/include/c++/11/bits/memoryfwd.h:
+
+/usr/include/c++/11/bits/stl_function.h:
 
 /usr/include/c++/11/cstdio:
 
@@ -1897,15 +1952,15 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/bits/locale_classes.tcc:
 
-/usr/include/c++/11/bits/node_handle.h:
-
 /usr/include/c++/11/iostream:
+
+/usr/include/c++/11/bits/node_handle.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
-/usr/include/c++/11/utility:
-
 /usr/include/c++/11/ios:
+
+/usr/include/c++/11/utility:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
 
@@ -1919,9 +1974,9 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/tr1/bessel_function.tcc:
 
-/usr/include/c++/11/bits/uniform_int_dist.h:
-
 ../external/glm-0.9.7.1/glm/exponential.hpp:
+
+/usr/include/c++/11/bits/uniform_int_dist.h:
 
 /usr/include/c++/11/bits/basic_ios.h:
 
@@ -1937,23 +1992,75 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
 
+../external/glm-0.9.7.1/glm/mat2x3.hpp:
+
+../external/glm-0.9.7.1/glm/detail/type_vec2.inl:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/c++/11/bits/locale_facets.tcc:
-
-/usr/include/c++/11/bits/enable_special_members.h:
-
-/usr/include/c++/11/bits/codecvt.h:
-
-/usr/include/c++/11/bits/basic_ios.tcc:
 
 /usr/include/c++/11/istream:
 
 /usr/include/c++/11/bits/istream.tcc:
 
+/usr/include/limits.h:
+
 /usr/include/c++/11/bits/stl_relops.h:
 
-/usr/include/limits.h:
+/usr/include/c++/11/debug/debug.h:
+
+/usr/include/features-time64.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
+
+../external/glm-0.9.7.1/glm/mat4x4.hpp:
+
+/usr/include/c++/11/bits/stl_algo.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/c++/11/cassert:
+
+/usr/include/c++/11/pstl/execution_defs.h:
+
+/usr/include/c++/11/bits/algorithmfwd.h:
+
+../common/shader.hpp:
+
+/usr/include/c++/11/bits/std_abs.h:
+
+/usr/include/c++/11/bits/stl_heap.h:
+
+/usr/include/c++/11/bits/sstream.tcc:
+
+/usr/include/c++/11/new:
+
+/usr/include/c++/11/climits:
+
+/usr/include/c++/11/bits/uses_allocator.h:
+
+/usr/include/c++/11/bits/refwrap.h:
+
+/usr/include/c++/11/bits/hashtable.h:
+
+/usr/include/c++/11/bits/hashtable_policy.h:
+
+/usr/include/c++/11/bits/codecvt.h:
+
+/usr/include/c++/11/bits/basic_ios.tcc:
+
+/usr/include/c++/11/bits/enable_special_members.h:
+
+/usr/include/c++/11/bits/ptr_traits.h:
+
+/usr/include/stdint.h:
+
+/usr/include/endian.h:
+
+/usr/include/c++/11/bits/erase_if.h:
 
 /usr/include/linux/limits.h:
 
@@ -1962,12 +2069,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 ../external/glfw-3.1.2/include/GLFW/glfw3.h:
 
 /usr/include/c++/11/limits:
-
-/usr/include/c++/11/bits/memoryfwd.h:
-
-/usr/include/c++/11/bits/stl_function.h:
-
-../external/glm-0.9.7.1/glm/detail/type_vec3.inl:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
@@ -1978,10 +2079,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/math.h:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/include/c++/11/cassert:
 
 ../external/glm-0.9.7.1/glm/gtc/constants.inl:
 
@@ -1996,8 +2093,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 ../external/glm-0.9.7.1/glm/detail/type_mat4x3.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
-../external/glm-0.9.7.1/glm/detail/precision.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
@@ -2021,18 +2116,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/tr1/riemann_zeta.tcc:
 
-/usr/include/c++/11/bits/sstream.tcc:
-
-/usr/include/c++/11/new:
-
-/usr/include/c++/11/climits:
-
-/usr/include/c++/11/debug/debug.h:
-
-/usr/include/features-time64.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
-
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
 /usr/include/c++/11/string:
@@ -2043,56 +2126,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/cfloat:
 
-../external/glm-0.9.7.1/glm/detail/type_int.hpp:
-
 ../external/glm-0.9.7.1/glm/detail/type_half.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
-
-/usr/include/c++/11/bits/string_view.tcc:
-
-../external/glm-0.9.7.1/glm/vec2.hpp:
-
-../external/glm-0.9.7.1/glm/detail/setup.hpp:
-
-../external/glm-0.9.7.1/glm/detail/type_mat2x4.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h:
-
-../external/glm-0.9.7.1/glm/detail/type_vec.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
-/usr/include/c++/11/bits/ostream_insert.h:
-
-../external/glm-0.9.7.1/glm/detail/type_vec2.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
-../external/glm-0.9.7.1/glm/detail/type_mat.hpp:
-
-../external/glm-0.9.7.1/glm/detail/type_vec3.hpp:
-
-/usr/include/c++/11/initializer_list:
-
-/usr/include/c++/11/iosfwd:
-
-../external/glm-0.9.7.1/glm/detail/type_vec4.inl:
-
-../external/glm-0.9.7.1/glm/detail/type_mat2x2.inl:
-
-../external/glm-0.9.7.1/glm/detail/type_vec2.inl:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
-
-../external/glm-0.9.7.1/glm/mat2x3.hpp:
-
-/usr/include/c++/11/ext/atomicity.h:
-
-../external/glm-0.9.7.1/glm/vec4.hpp:
-
-../external/glm-0.9.7.1/glm/detail/type_mat2x3.hpp:
