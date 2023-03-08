@@ -23,8 +23,7 @@ using namespace glm;
 #include <common/objloader.hpp>
 #include <common/vboindexer.hpp>
 
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#include <common/texture.hpp>
 
 void processInput(GLFWwindow *window);
 
@@ -44,6 +43,14 @@ float lastFrame = 0.0f;
 //rotation
 float angle = 0.;
 float zoom = 1.;
+
+int resolution = 16;
+std::vector<unsigned short> indices; //Triangles concaténés dans une liste
+std::vector<std::vector<unsigned short> > triangles;
+std::vector<glm::vec3> indexed_vertices;
+std::vector<float> textureData;
+
+bool isGrassTextureAlreadyImported = false;
 /*******************************************************************************/
 
 std::vector<int> getIndex(std::vector<glm::vec3> indexed_vertices, glm::vec3 point) {
@@ -58,9 +65,9 @@ std::vector<int> getIndex(std::vector<glm::vec3> indexed_vertices, glm::vec3 poi
     return indexList;
 }
 
-
 std::vector<glm::vec3> generatePlan(float length, int resolution) {
-    std::vector<glm::vec3> indexed_vertices;
+
+    std::vector<glm::vec3> vertices;
 
     float pas = length/(float)resolution;
 
@@ -69,9 +76,9 @@ std::vector<glm::vec3> generatePlan(float length, int resolution) {
     float nbSquare = pow(resolution, 2);
 
     float pasBasX = 0;
-    float pasBasY = 0;
+    float pasBasZ = 0;
     float pasHautX = pas;
-    float pasHautY = pas;
+    float pasHautZ = pas;
 
     int cpt = floor(nbSquare/resolution)-1;
 
@@ -79,23 +86,23 @@ std::vector<glm::vec3> generatePlan(float length, int resolution) {
 
     for (int elt = 0; elt < nbSquare; elt++) {
 
-        basGauche = glm::vec3(pasBasX, pasBasY, 0);
-        basDroit = glm::vec3(pasHautX, pasBasY, 0);
+        basGauche = glm::vec3(pasBasX, 0, pasBasZ);
+        basDroit = glm::vec3(pasHautX, 0, pasBasZ);
 
-        hautDroit = glm::vec3(pasHautX, pasHautY, 0);
-        hautGauche = glm::vec3(pasBasX, pasHautY, 0);
+        hautDroit = glm::vec3(pasHautX, 0, pasHautZ);
+        hautGauche = glm::vec3(pasBasX, 0, pasHautZ);
 
-        indexed_vertices.push_back(basGauche);
-        indexed_vertices.push_back(basDroit);
-        indexed_vertices.push_back(hautDroit);
-        indexed_vertices.push_back(hautGauche);
+        vertices.push_back(basGauche);
+        vertices.push_back(basDroit);
+        vertices.push_back(hautDroit);
+        vertices.push_back(hautGauche);
 
         if (elt == cpt) {
             pasBasX -= pas*(resolution-1);
             pasHautX -= pas*(resolution-1);
 
-            pasBasY += pas;
-            pasHautY += pas;
+            pasBasZ += pas;
+            pasHautZ += pas;
 
             cpt += resolution;
         }
@@ -105,61 +112,99 @@ std::vector<glm::vec3> generatePlan(float length, int resolution) {
         }
     }
 
-    for (int i = 0; i < indexed_vertices.size(); i++) {
+    for (int i = 0; i < vertices.size(); i++) {
 
-        float randZ = (float)(rand()) / (float)(RAND_MAX);
+        float randY = (float)(rand()) / (float)(RAND_MAX);
         
-        if(std::find(indexed_vertices.begin(), indexed_vertices.end(), indexed_vertices[i]) != indexed_vertices.end()) {
-            std::vector<int> indexList = getIndex(indexed_vertices, indexed_vertices[i]);
+        if(std::find(vertices.begin(), vertices.end(), vertices[i]) != vertices.end()) {
+            std::vector<int> indexList = getIndex(vertices, vertices[i]);
 
             for (int j = 0; j < indexList.size(); j++) {
-                indexed_vertices[indexList[j]][2] = randZ;
+                vertices[indexList[j]][1] = randY;
             }
         }
         else {
-            indexed_vertices[i][2] = randZ;
+            vertices[i][1] = randY;
         }
 
     }
 
-    return indexed_vertices;
-
+    return vertices;
 }
 
 std::vector<unsigned short> generateTriangle(int resolution) {
-    std::vector<unsigned short> indices;
+
+    std::vector<unsigned short> id;
 
     int j = 0, cptResolution = 0;
 
     for (int i = 0; i < pow(resolution, 2)*4; i+=4) {
 
-        indices.push_back(i);
-        indices.push_back(i+1);
-        indices.push_back(i+2);
+        id.push_back(i);
+        id.push_back(i+1);
+        id.push_back(i+2);
 
-        indices.push_back(i);
-        indices.push_back(i+2);
-        indices.push_back(i+3);
-
+        id.push_back(i);
+        id.push_back(i+2);
+        id.push_back(i+3);
 
     }
 
-    return indices;
+    return id;
 }
 
-void generateTextureCoords(float *q, int resolution) {
-    int taille = pow(resolution, 2)*4*2;
+std::vector<float> generateTextureCoords(float length, int resolution) {
 
-    for (int i = 0; i < taille; i+=8) {
-        q[i] = 0.0f;
-        q[i+1] = 0.0f;
-        q[i+2] = 0.0f;
-        q[i+3] = 1.0f;
-        q[i+4] = 1.0f;
-        q[i+5] = 1.0f;
-        q[i+6] = 1.0f; 
-        q[i+7] = 0.0f;
+    std::vector<float> data;
+    data.resize(resolution * resolution * 8);
+
+    float pas = length/(float)resolution;
+
+    float positioni = 0, positionj;
+
+    float nbSquare = pow(resolution, 2);
+
+    float pasBasX = 0;
+    float pasBasZ = 0;
+    float pasHautX = pas;
+    float pasHautZ = pas;
+
+    int cpt = floor(nbSquare/resolution)-1;
+
+    int elt = 0;
+
+    glm::vec3 basGauche, basDroit, hautGauche, hautDroit;
+
+    for (int indexTexture = 0; indexTexture < resolution * resolution * 8; indexTexture+=8) {
+
+        data[indexTexture] = pasBasX;
+        data[indexTexture+1] = pasBasZ;
+        data[indexTexture+2] = pasHautX;
+        data[indexTexture+3] = pasBasZ;
+        data[indexTexture+4] = pasHautX;
+        data[indexTexture+5] = pasHautZ;
+        data[indexTexture+6] = pasBasX;
+        data[indexTexture+7] = pasHautZ;
+
+        if (elt == cpt) {
+            pasBasX -= pas*(resolution-1);
+            pasHautX -= pas*(resolution-1);
+
+            pasBasZ += pas;
+            pasHautZ += pas;
+
+            cpt += resolution;
+        }
+        else {
+            pasBasX += pas;
+            pasHautX += pas;
+        }
+
+        elt++;
     }
+
+    return data;
+
 }
 
 
@@ -229,16 +274,17 @@ int main( void )
     // Get a handle for our "Model View Projection" matrices uniforms
 
     /****************************************/
-    std::vector<unsigned short> indices; //Triangles concaténés dans une liste
-    std::vector<std::vector<unsigned short> > triangles;
-    std::vector<glm::vec3> indexed_vertices;
-
     //Chargement du fichier de maillage
     /*std::string filename("cube.off");
     loadOFF(filename, indexed_vertices, indices, triangles );*/
-    int resolution = 16;
 
+    textureData.clear();
+    textureData = generateTextureCoords(1, resolution);
+
+    indexed_vertices.clear();
     indexed_vertices = generatePlan(1, resolution);
+
+    indices.clear();
     indices = generateTriangle(resolution);
 
     // Load it into a VBO
@@ -254,22 +300,16 @@ int main( void )
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned short), &indices[0] , GL_STATIC_DRAW);
 
-
-    float squareTextureData[(int)pow(resolution, 2)*4*2]; 
-    generateTextureCoords(&squareTextureData[0], resolution);
-
     GLuint textureBuffer;
     glGenBuffers(1, &textureBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, textureBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(squareTextureData), &squareTextureData, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, textureData.size() * sizeof(float), &textureData[0], GL_STATIC_DRAW);
 
-    unsigned int texture;
+    /*unsigned int texture;
     glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
+    glBindTexture(GL_TEXTURE_2D, texture);*/
 
-    //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-
-    int width, height, nbChannels;
+    /*int width, height, nbChannels;
     unsigned char *data = stbi_load("cliff.jpg", &width, &height, &nbChannels, 0);
 
     if (data) {
@@ -280,7 +320,7 @@ int main( void )
         std::cout << "Failed to load texture" << std::endl;
     }
 
-    stbi_image_free(data);
+    stbi_image_free(data);*/
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -360,11 +400,11 @@ int main( void )
         glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2*sizeof(float), (void*)0);
         glEnableVertexAttribArray(1);
 
-        glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, texture);
-        glActiveTexture(GL_TEXTURE0);
-        glUniform1i(glGetUniformLocation(programID, "colorTexture"), GL_TEXTURE0);
-
+        if(!isGrassTextureAlreadyImported) {
+            glActiveTexture(GL_TEXTURE0);
+            loadBMP_custom("grass.bmp");
+            glUniform1i(glGetUniformLocation(programID, "colorTexture"), 0);
+        }
         // Draw the triangles !
         glDrawElements(
                     GL_TRIANGLES,      // mode

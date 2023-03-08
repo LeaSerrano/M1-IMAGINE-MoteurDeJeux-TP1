@@ -342,10 +342,7 @@ CMakeFiles/TP1.dir/TP1/TP1.cpp.o: ../TP1/TP1.cpp \
   ../common/shader.hpp \
   ../common/objloader.hpp \
   ../common/vboindexer.hpp \
-  ../TP1/stb_image.h \
-  /usr/include/string.h \
-  /usr/include/strings.h \
-  /usr/include/c++/11/math.h
+  ../common/texture.hpp
 
 CMakeFiles/TP1.dir/common/controls.cpp.o: ../common/controls.cpp \
   /usr/include/stdc-predef.h \
@@ -1418,6 +1415,8 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 
 /usr/include/c++/11/fstream:
 
+/usr/include/strings.h:
+
 ../common/objloader.cpp:
 
 ../common/controls.hpp:
@@ -1425,12 +1424,6 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 /usr/include/KHR/khrplatform.h:
 
 /usr/include/GL/glext.h:
-
-/usr/include/c++/11/math.h:
-
-/usr/include/strings.h:
-
-../TP1/stb_image.h:
 
 ../common/vboindexer.hpp:
 
@@ -1595,6 +1588,8 @@ CMakeFiles/TP1.dir/common/vboindexer.cpp.o: ../common/vboindexer.cpp \
 /usr/include/c++/11/clocale:
 
 /usr/include/c++/11/bits/ostream.tcc:
+
+../common/texture.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
